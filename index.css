@@ -1,0 +1,244 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+body {
+  --bg1: #ECEFF4;
+  --bg2: #E5E9F0;
+  
+  --bga1: #2E3440;
+  --bga2: #3B4252;
+  --bga3: #434C5E;
+  
+  --fg1: #2E3440;
+  --fg2: #3B4252;
+  
+  --fga1: #ECEFF4;
+  --fga2: #E5E9F0;
+  
+  --nord7: #88C0D0;
+  --nord10: #5E81AC;
+  --nord11: #BF616A;
+  --nord13: #EBCB8B;
+  --nord14: #A3BE8C;
+  
+  background-color: var(--bg2);
+  color: var(--fg1);
+}
+body::-webkit-scrollbar {
+  width: 1em;
+}
+body::-webkit-scrollbar-track {
+  background-color: var(--bga2);
+}
+body::-webkit-scrollbar-thumb {
+  background-color: var(--fga2);
+}
+.container {
+  display: grid;
+  grid-template-areas:
+    "navbar navbar"
+    "left right"
+    "footer footer";
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 60px auto auto;
+  min-height: 100vh;
+}
+.container .left {
+  grid-area: left;
+  padding: 20px 50px 20px 25px;
+  text-align: justify;
+}
+.container .left span {
+  display: block;
+  width: auto;
+  padding: 0 100px;
+  font-family: Arial;
+}
+.container .right {
+  grid-area: right;
+  padding: 20px 50px 20px 25px;
+  text-align: justify;
+  background-image: linear-gradient(var(--bga1), var(--bga2));
+  color: var(--fga1);
+}
+.container .right img, .container .left img {
+  margin: 10px 0;
+  width: 100%;
+}
+.container .left img {
+  transition: transform 100ms;
+}
+.container .left img:hover {
+  transform: scale(1.05);
+}
+.container .right a {
+  display: block;
+  margin-bottom: 50px;
+  color: inherit;
+  text-decoration: inherit;
+  font-family: Arial;
+  transition: transform 100ms;
+}
+.container .right a:hover {
+  transform: scale(1.05);
+}
+.container .navbar {
+  grid-area: navbar;
+  background-image: linear-gradient(45deg, var(--bga1), var(--nord10));
+  color: var(--fga1);
+  font-family: Arial;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .navbar .brand-div {
+  display: flex;
+  transition: transform 100ms;
+  color: inherit;
+  text-decoration: inherit;
+}
+.container .navbar .brand-div:hover {
+  transform: scale(1.05);
+}
+.container .navbar .brand {
+  height: 2.5em;
+  margin: auto 0;
+  border-radius: 50%;
+}
+.container .navbar .title {
+  display: block;
+  margin: auto 5px;
+  font-size: 115%;
+}
+.container .navbar .spacer {
+  flex: auto;
+}
+.container .navbar i {
+  display: block;
+  margin: auto 0;
+  font-size: 115%;
+  transition: opacity 100ms;
+}
+.container .navbar i:hover {
+ opacity: 0.8;
+}
+.container .footer {
+  grid-area: footer;
+  padding: 20px 50px 20px 50px;
+  background-image: linear-gradient(45deg, var(--bga2), var(--nord10));
+  color: var(--fga1);
+  font-family: Arial;
+}
+
+.code {
+  background-image: linear-gradient(45deg, var(--bga1), var(--bga2));
+  color: var(--fga1);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px var(--bga1);
+  transition: box-shadow 300ms;
+}
+.code:hover {
+  box-shadow: 0 0 20px var(--bga1);
+}
+.code pre:hover {
+  background-image: linear-gradient(45deg, var(--bga2), var(--bga3));
+}
+.code .diff {
+  color: var(--nord13);
+}
+.code .diffrm {
+  color: var(--nord11);
+}
+.code .diffadd {
+  color: var(--nord14);
+}
+
+a {
+  color: var(--nord7);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "navbar"
+      "left"
+      "right"
+      "footer";
+    grid-template-columns: auto;
+    grid-template-rows: 60px auto auto auto;
+    min-height: 100vh;
+  }
+  .container .left span, .container .right span {
+    padding: 0 0;
+  }
+  .container .right, .container .left {
+    padding: 20px 50px 20px 50px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --bg1: #2E3440;
+    --bg2: #3B4252;
+    
+    --fg1: #ECEFF4;
+    --fg2: #E5E9F0;
+  }
+}
+
